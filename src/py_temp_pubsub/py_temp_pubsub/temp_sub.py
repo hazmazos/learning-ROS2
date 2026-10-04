@@ -11,6 +11,9 @@ class TemperatureSubscriber(Node):
     def listener_callback(self, msg):
         self.get_logger().info('I heard "%.2f"' % msg.data)
 
+        if msg.data > 28.0:
+            self.get_logger().warn("Temperature too high")
+
 def main():
     rclpy.init()
     temp_subscriber = TemperatureSubscriber()
