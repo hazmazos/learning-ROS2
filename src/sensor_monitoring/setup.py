@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='hamza',
     maintainer_email='hamza@todo.todo',
-    description='TODO: Package description',
+    description='Mock publisher for IMU',
     license='Apache-2.0',
     extras_require={
         'test': [
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'imu_talker = sensor_monitoring.imu_data_pub:main',
         ],
     },
 )

@@ -20,4 +20,12 @@ class ImuPublisher(Node):
         self.publisher_.publish(msg)
         self.logger().info('Publishing "%.2f"' % msg)
         
+def main():
+    rclpy.init()
+    imu_publisher = ImuPublisher()
+    rclpy.spin(imu_publisher)
+    
+    imu_publisher.destroy_node()
+    rclpy.shutdown()
+        
     
