@@ -1,0 +1,4 @@
+int64 pan_angle
+int64 tilt_angle 
+---
+string status
