@@ -1,0 +1,13 @@
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import Int8
+from geometry_msgs.msg import Point
+
+class MonitorNode(Node):
+    
+    def __init__(self):
+        super().__init__('monitor_node')
+        self.battery_sub = self.create_subscription(Int8, 'battery_health_topic', self.battery_callback, 10)
+        self.battery_sub
+    
+    def battery_callback(self)
