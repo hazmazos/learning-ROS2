@@ -27,7 +27,8 @@ setup(
             'battery_talker = robot_monitoring.battery_pub:main',
             'position_talker = robot_monitoring.position_pub:main',
             'monitor_node = robot_monitoring.monitor_node:main',
-            'battery_client = robot_monitoring.battery_client:main'
+            'get_battery_client = robot_monitoring.battery_client:main',
+            'reset_position_client = robot_monitoring.reset_position_cli:main',
         ],
     },
 )
