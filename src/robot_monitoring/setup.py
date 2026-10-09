@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'battery_talker = robot_monitoring.battery_pub:main',
             'position_talker = robot_monitoring.position_pub:main',
+            'monitor_node = robot_monitoring.monitor_node:main',
+            'battery_client = robot_monitoring.battery_client:main'
         ],
     },
 )
