@@ -7,7 +7,12 @@ class MonitorNode(Node):
     
     def __init__(self):
         super().__init__('monitor_node')
-        self.battery_sub = self.create_subscription(Int8, 'battery_health_topic', self.battery_callback, 10)
-        self.battery_sub
+        self.battery_health = None
+        self.battery_sub = self.create_subscription(Int8, 'battery_health_topic', self.battery_sub_callback, 10)
+        self.battery_srv = self.create_service(Int8, 'battery_health_service', self.battery_srv_callback)
+        
     
-    def battery_callback(self)
+    def battery_sub_callback(self, msg):
+        self.battery_health = msg.data
+
+    def battery_srv_callback(self ,_request, reponse) ## to make a custom interface
